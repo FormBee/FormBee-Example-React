@@ -2,20 +2,16 @@ import { useState } from 'react';
 import './App.css';
 
 function App() {
-  // include your fields here, you can add as many as you want, just make sure they are unique.
   const [formData, setFormData] = useState({ field1: '', field2: '', field3: '' });
-  const apiKey = 'YOUR_API_KEY';
+  const apiKey = 'b27ed43d-5d46-469e-a99b-d656991e0c05';
 
-  // handle form data changes
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  // handle form submission
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // send form data to FormBee
     fetch(`http://localhost:3000/formbee/${apiKey}`, {
       method: 'POST',
       headers: {
@@ -34,19 +30,16 @@ function App() {
     });
   };
 
-  // render form
   return (
     <div className="App">
-      {/* make submit button call handleSubmit */}
+      <h1>FormBee React Example</h1>
       <form onSubmit={handleSubmit}>
         <div className="form-group">
           <label htmlFor="name">Name:</label>
           <input
             type="text"
             id="name"
-            // make sure to include the name attribute
             name="field1"
-            // set the initial value of the field
             value={formData.field1}
             onChange={handleChange}
           />

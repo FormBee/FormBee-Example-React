@@ -1,31 +1,79 @@
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
 .App {
   text-align: center;
-  margin-top: 50px;
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 600px;
+  margin: 20px;
+}
+
+h1 {
+  font-size: 3rem;
+  color: #e6bf23;
+  margin-bottom: 20px;
 }
 
 .form-group {
-  margin-bottom: 15px;
+  margin-bottom: 20px;
+  text-align: left;
 }
 
 label {
   display: block;
-  margin-bottom: 5px;
+  font-size: 1.2rem;
+  margin-bottom: 8px;
 }
 
-input {
+input,
+textarea {
   width: 100%;
-  padding: 8px;
+  padding: 12px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
   box-sizing: border-box;
+  transition: border-color 0.3s;
+}
+
+input:focus,
+textarea:focus {
+  border-color: #e6bf23;
+
+  outline: none;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 100px;
 }
 
 button {
-  padding: 10px 20px;
-  background-color: #4CAF50;
+  padding: 12px 24px;
+  background-color: #e6bf23;
+
   color: white;
   border: none;
+  border-radius: 8px;
+  font-size: 1.2rem;
   cursor: pointer;
+  transition: background-color 0.3s;
 }
 
 button:hover {
-  background-color: #45a049;
+  background-color: #e6bf23;
+
 }
